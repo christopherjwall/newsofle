@@ -62,6 +62,16 @@
             #binding-cells = <0>;
             continue-list = <POUND MINUS BACKSPACE UNDERSCORE>;
         };
+
+        autoshift: behavior_autoshift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "AUTOSHIFT";
+            #binding-cells = <2>;
+            tapping-term-ms = <147>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     keymap {
@@ -78,10 +88,10 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&gresc            &autoshift &kp N1  &autoshift &kp N2    &autoshift &kp N3    &autoshift &kp N4     &autoshift &kp N5                                     &autoshift &kp N6     &autoshift &kp N7     &autoshift &kp N8     &autoshift &kp N9    &autoshift &kp N0    &kp MINUS
-&kp TAB           &autoshift &kp Q   &autoshift &kp W     &autoshift &kp E     &autoshift &kp R      &autoshift &kp T                                      &autoshift &kp Y      &autoshift &kp U      &autoshift &kp I      &autoshift &kp O     &autoshift &kp P     &kp BSPC
-&kp LEFT_SHIFT    &autoshift &kp A   &autoshift &kp S     &autoshift &kp D     &autoshift &kp F      &autoshift &kp G                                      &autoshift &kp H      &autoshift &kp J      &autoshift &kp K      &autoshift &kp L     &kp SEMI  &kp SQT
-&kp LEFT_CONTROL  &autoshift &kp Z   &autoshift &kp X     &autoshift &kp C     &autoshift &kp V      &autoshift &kp B      &kp C_MUTE    &kp C_PLAY_PAUSE  &autoshift &kp N      &autoshift &kp M      &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
+&gresc            &autoshift N1 EXCL   &autoshift N2 AT      &autoshift N3 HASH    &autoshift N4 DLLR    &autoshift N5 PRCNT                                &autoshift N6 CARET   &autoshift N7 AMPERSAND  &autoshift N8 ASTRK    &autoshift N9 LPAR   &autoshift N0 RPAR    &kp MINUS
+&kp TAB           &autoshift Q LS(Q)   &autoshift W LS(W)    &autoshift E LS(E)    &autoshift R LS(R)    &autoshift T LS(T)                             &autoshift Y LS(Y)    &autoshift U LS(U)       &autoshift I LS(I)    &autoshift O LS(O)   &autoshift P LS(P)    &kp BSPC
+&kp LEFT_SHIFT    &autoshift A LS(A)   &autoshift S LS(S)    &autoshift D LS(D)    &autoshift F LS(F)    &autoshift G LS(G)                             &autoshift H LS(H)    &autoshift J LS(J)       &autoshift K LS(K)    &autoshift L LS(L)   &kp SEMI  &kp SQT
+&kp LEFT_CONTROL  &autoshift Z LS(Z)   &autoshift X LS(X)    &autoshift C LS(C)    &autoshift V LS(V)    &autoshift B LS(B)    &kp C_MUTE    &kp C_PLAY_PAUSE  &autoshift N LS(N)    &autoshift M LS(M)      &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
                           &kp LGUI  &kp LALT  &kp LCTRL  &mo LOWER  &kp SPACE     &kp ENTER         &mo RAISE  &kp RCTRL  &kp LALT   &kp RGUI
             >;
 
